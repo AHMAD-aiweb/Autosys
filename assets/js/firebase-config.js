@@ -1,10 +1,8 @@
 <!-- Firebase App (core SDK) -->
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
-
-<!-- Add other Firebase SDKs you need -->
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+// firebase.js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 <!-- Your Firebase config -->
 <script>
@@ -21,8 +19,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 // Export Firebase services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export { auth };
+
 export const storage = getStorage(app);

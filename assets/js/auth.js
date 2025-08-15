@@ -1,3 +1,16 @@
+// Login.js or Signup.js
+import { auth } from "./firebase"; // adjust path as needed
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+const handleLogin = async () => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    console.log("Logged in!");
+  } catch (error) {
+    console.error("Login error:", error.message);
+  }
+};
+
 // Handle Sign In
 const signInForm = document.getElementById('signInForm');
 if(signInForm){
@@ -52,3 +65,4 @@ if(signUpForm){
     }
   });
 }
+

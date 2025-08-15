@@ -1,0 +1,73 @@
+:root{
+  --green:#10EF52; --blue:#103EEF; --pink:#EF10AD; --yellow:#EFC110;
+  --bg:#0b0e14; --card:#121624; --muted:#8a90a3; --text:#e8ecf3; --danger:#e74c3c;
+  --ok:#2ecc71; --warn:#f1c40f;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,Segoe UI,Roboto,Ubuntu,sans-serif}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:16px}
+.navbar{position:sticky;top:0;background:#0d1020d9;backdrop-filter:blur(6px);border-bottom:1px solid #1e2340;z-index:20}
+.navbar .inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue))}
+
+.nav-links{display:flex;gap:10px;flex-wrap:wrap}
+.nav-links a{padding:8px 12px;border-radius:10px;background:#101633;border:1px solid #1a2246}
+.nav-links a.active{outline:2px solid var(--blue)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:12px;padding:10px 14px;cursor:pointer;color:#0b0e14;background:var(--green);font-weight:600;transition:.2s transform}
+.btn:hover{transform:translateY(-1px)}
+.btn.secondary{background:#111a35;color:var(--text);border:1px solid #1a2246}
+.btn.warn{background:var(--yellow);color:#0b0e14}
+.btn.danger{background:var(--danger);color:#fff}
+.btn.ghost{background:transparent;border:1px dashed #2a335e;color:var(--muted)}
+
+.grid{display:grid;gap:16px}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid #1a2246;border-radius:var(--radius);padding:16px}
+.card h2,.card h3{margin:0 0 10px}
+
+.input,.select,.textarea{width:100%;background:#0f1430;border:1px solid #1a2246;color:var(--text);border-radius:12px;padding:10px 12px}
+.input::placeholder{color:#6d7590}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){.row{grid-template-columns:1fr}}
+.form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:10px}
+.help{color:var(--muted);font-size:.9rem}
+
+.table-wrap{overflow:auto;border:1px solid #1a2246;border-radius:12px}
+table{width:100%;border-collapse:collapse;background:#0f1430}
+th,td{padding:10px;border-bottom:1px solid #1a2246;white-space:nowrap}
+th{position:sticky;top:0;background:#101633;text-align:left;cursor:pointer}
+tr:hover{background:#0f1536}
+
+.badge{display:inline-block;padding:4px 8px;border-radius:8px;font-weight:600;font-size:.85rem}
+.badge.green{background:#103a1f;color:#7DFFA5;border:1px solid #184f2a}
+.badge.blue{background:#0e1d52;color:#7da6ff;border:1px solid #1c2a6b}
+.badge.pink{background:#3a0e2c;color:#ff8bd6;border:1px solid #5a1743}
+.badge.yellow{background:#332909;color:#ffdf7d;border:1px solid #5a4a11}
+
+.footer{margin-top:40px;padding:20px;border-top:1px solid #1a2246;background:#0d1020}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer .right{margin-left:auto}
+.hidden{display:none !important}
+
+.notice{padding:10px;border-radius:10px;background:#0e1d52;border:1px solid #1c2a6b}
+
+.tag{border:1px solid #2a335e;padding:6px 8px;border-radius:8px;color:#9eb1ff}
+.kpi{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;border:1px solid #1a2246}
+.kpi .num{font-size:1.6rem;font-weight:800}
+
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#0009;z-index:50}
+.modal .sheet{width:100%;max-width:420px;background:#0f1430;border:1px solid #1a2246;border-radius:14px;padding:16px}
+.modal.show{display:flex}
+
+.header-slab{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.header-slab .pill{padding:6px 10px;border-radius:999px;border:1px solid #2a335e;color:#b5c1ff}
+small.muted{color:#9aa3bf}
